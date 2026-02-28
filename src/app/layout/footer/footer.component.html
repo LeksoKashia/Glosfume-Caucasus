@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a routerLink="/" class="logo">
+        <span class="logo-text">Glosfume</span>
+        <span class="logo-accent">Caucasus</span>
+      </a>
+    </div>
+    <nav class="footer-nav">
+      <a routerLink="/">{{ 'nav.home' | translate }}</a>
+      <a routerLink="/services">{{ 'nav.services' | translate }}</a>
+      <a routerLink="/about">{{ 'nav.about' | translate }}</a>
+      <a routerLink="/contact">{{ 'nav.contact' | translate }}</a>
+    </nav>
+    <p class="copyright">© {{ currentYear }} Glosfume Caucasus. {{ 'footer.rights' | translate }}</p>
+  </div>
+</footer>

@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "heroTitle": "Welcome to Glosfume Caucasus",
+    "heroSubtitle": "We deliver excellence and trust across the Caucasus region. Your success is our mission.",
+    "cta": "Explore Our Services",
+    "ctaSecondary": "Contact Us",
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Comprehensive solutions tailored to your needs.",
+    "viewAllServices": "View All Services",
+    "whyUsTitle": "Why Choose Us",
+    "whyUsSubtitle": "Experience, reliability, and a commitment to quality.",
+    "features": {
+      "emissions": "Emissions below 5 mg/Nm³ at 6% of 0°C guaranteed rate",
+      "fireResistance": "Fire resistance up to 1000℃ of the filter media",
+      "pmCapture": "Ability to capture 99% of PM2.5 and PM10",
+      "compact": "Compact solution with a small footprint"
+    },
+    "trust": "Trusted by clients across the region",
+    "quality": "Quality-driven results",
+    "support": "Dedicated support every step of the way",
+    "reviews": {
+      "title": "What Our Clients Say",
+      "subtitle": "Trusted by businesses across the region.",
+      "review1": {
+        "quote": "We had a tight deadline for our filtration upgrade. Glosfume not only delivered on time but the emissions readings were better than we expected. Real professionals.",
+        "name": "David K.",
+        "role": "Operations Director",
+        "initial": "D",
+        "avatar": ""
+      },
+      "review2": {
+        "quote": "After comparing several suppliers in the region, we chose Glosfume. The equipment is running smoothly and their support team responds within hours when we need them.",
+        "name": "Maria T.",
+        "role": "CEO, Industrial Solutions",
+        "initial": "M",
+        "avatar": ""
+      },
+      "review3": {
+        "quote": "Clear documentation, fair pricing, and they actually listen to what you need. We’ve done three projects together and I’d work with them again without hesitation.",
+        "name": "Giorgi M.",
+        "role": "Project Manager",
+        "initial": "G",
+        "avatar": ""
+      },
+      "review4": {
+        "quote": "The compact design fit our existing layout, and installation was straightforward. Performance has been stable for over a year now. Very satisfied.",
+        "name": "Elena S.",
+        "role": "Procurement Lead",
+        "initial": "E",
+        "avatar": ""
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Detailed overview of what we offer.",
+    "consulting": {
+      "title": "Consulting",
+      "description": "Strategic consulting to help your business grow and navigate complex challenges."
+    },
+    "solutions": {
+      "title": "Custom Solutions",
+      "description": "Tailored solutions designed to meet your unique requirements and goals."
+    },
+    "support": {
+      "title": "Support & Maintenance",
+      "description": "Ongoing support and maintenance to keep your operations running smoothly."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Get to know our story and values.",
+    "storyTitle": "Our Story",
+    "story": "Glosfume Caucasus was founded with a vision to bring excellence and reliability to the Caucasus region. We combine local expertise with international standards to deliver outstanding results for our clients.",
+    "valuesTitle": "Our Values",
+    "integrity": "Integrity in every action",
+    "excellence": "Excellence in delivery",
+    "partnership": "Partnership with our clients"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We would love to hear from you.",
+    "name": "Your Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thank you! Your message has been sent.",
+    "address": "Address",
+    "phone": "Phone",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

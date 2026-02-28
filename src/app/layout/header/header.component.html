@@ -1,0 +1,101 @@
+<header class="header">
+  <div class="container header-inner">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo-text">Glosfume</span>
+      <span class="logo-accent">Caucasus</span>
+    </a>
+
+    <nav class="nav" [class.open]="isMenuOpen">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+        >{{ "nav.home" | translate }}</a
+      >
+      <a
+        routerLink="/services"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+        >{{ "nav.services" | translate }}</a
+      >
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{
+        "nav.about" | translate
+      }}</a>
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+        >{{ "nav.contact" | translate }}</a
+      >
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switcher">
+        @for (lang of languages; track lang.code) {
+          <button
+            type="button"
+            class="lang-btn"
+            [class.active]="translate.currentLang === lang.code"
+            (click)="setLang(lang.code)"
+          >
+            {{ lang.label }}
+          </button>
+        }
+      </div>
+      <button
+        type="button"
+        class="theme-toggle"
+        (click)="theme.toggleTheme()"
+        [attr.aria-label]="
+          theme.isDark() ? 'Switch to light mode' : 'Switch to dark mode'
+        "
+      >
+        @if (showThemeIcon && theme.isDark()) {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            title="Switch to light"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            />
+          </svg>
+        } @else {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            title="Switch to dark"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        }
+      </button>
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

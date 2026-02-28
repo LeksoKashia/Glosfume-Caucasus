@@ -1,0 +1,186 @@
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ "home.heroTitle" | translate }}</h1>
+      <p class="hero-subtitle">{{ "home.heroSubtitle" | translate }}</p>
+      <div class="hero-actions">
+        <a routerLink="/services" class="btn btn-primary">{{
+          "home.cta" | translate
+        }}</a>
+        <a routerLink="/contact" class="btn btn-outline">{{
+          "home.ctaSecondary" | translate
+        }}</a>
+      </div>
+    </div>
+    <div class="hero-features">
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <img src="/assets/emissions.png" alt="" class="feature-icon" />
+        </div>
+        <p class="feature-text">{{ "home.features.emissions" | translate }}</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <img src="/assets/temperature.png" alt="" class="feature-icon" />
+        </div>
+        <p class="feature-text">{{ "home.features.fireResistance" | translate }}</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <img src="/assets/filtration.png" alt="" class="feature-icon" />
+        </div>
+        <p class="feature-text">{{ "home.features.pmCapture" | translate }}</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon-wrap">
+          <img src="/assets/comptact.png" alt="" class="feature-icon" />
+        </div>
+        <p class="feature-text">{{ "home.features.compact" | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section services-preview">
+  <div class="container">
+    <h2 class="section-title text-center">
+      {{ "home.servicesTitle" | translate }}
+    </h2>
+    <p class="section-subtitle text-center">
+      {{ "home.servicesSubtitle" | translate }}
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <h3>{{ "services.consulting.title" | translate }}</h3>
+        <p>{{ "services.consulting.description" | translate }}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"
+            />
+            <path d="M12 6v6l4 2" />
+          </svg>
+        </div>
+        <h3>{{ "services.solutions.title" | translate }}</h3>
+        <p>{{ "services.solutions.description" | translate }}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+        </div>
+        <h3>{{ "services.support.title" | translate }}</h3>
+        <p>{{ "services.support.description" | translate }}</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 2rem">
+      <a routerLink="/services" class="btn btn-primary">{{
+        "home.viewAllServices" | translate
+      }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section why-us">
+  <div class="container">
+    <h2 class="section-title text-center">
+      {{ "home.whyUsTitle" | translate }}
+    </h2>
+    <p class="section-subtitle text-center">
+      {{ "home.whyUsSubtitle" | translate }}
+    </p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-number">01</span>
+        <h3>{{ "home.trust" | translate }}</h3>
+      </div>
+      <div class="why-card">
+        <span class="why-number">02</span>
+        <h3>{{ "home.quality" | translate }}</h3>
+      </div>
+      <div class="why-card">
+        <span class="why-number">03</span>
+        <h3>{{ "home.support" | translate }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section reviews-section">
+  <div class="container">
+    <h2 class="section-title text-center">
+      {{ "home.reviews.title" | translate }}
+    </h2>
+    <p class="section-subtitle text-center">
+      {{ "home.reviews.subtitle" | translate }}
+    </p>
+    <div class="reviews-carousel">
+      <button type="button" class="carousel-btn carousel-prev" (click)="prev()" aria-label="Previous review">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-track">
+        <div class="review-card" [attr.data-index]="currentReviewIndex">
+          <div class="review-avatar">
+            @if (getReviewAvatar(currentReviewKey); as avatar) {
+              <img [src]="avatar" [alt]="'home.reviews.' + currentReviewKey + '.name' | translate" />
+            } @else {
+              <span class="review-avatar-initials">{{ 'home.reviews.' + currentReviewKey + '.initial' | translate }}</span>
+            }
+          </div>
+          <blockquote class="review-quote">
+            <span class="review-quote-mark review-quote-open" aria-hidden="true">"</span>
+            <span class="review-quote-text">{{ 'home.reviews.' + currentReviewKey + '.quote' | translate }}</span>
+            <span class="review-quote-mark review-quote-close" aria-hidden="true">"</span>
+          </blockquote>
+          <footer class="review-author">
+            <strong class="review-name">{{ 'home.reviews.' + currentReviewKey + '.name' | translate }}</strong>
+            <span class="review-role">{{ 'home.reviews.' + currentReviewKey + '.role' | translate }}</span>
+          </footer>
+        </div>
+      </div>
+      <button type="button" class="carousel-btn carousel-next" (click)="next()" aria-label="Next review">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="carousel-dots">
+      @for (i of [0, 1, 2, 3]; track i) {
+        <button type="button" class="dot" [class.active]="currentReviewIndex === i" (click)="goTo(i)" [attr.aria-label]="'Review ' + (i + 1)"></button>
+      }
+    </div>
+  </div>
+</section>

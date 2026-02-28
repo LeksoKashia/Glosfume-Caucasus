@@ -1,0 +1,225 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-header-bg);
+  border-bottom: 1px solid var(--color-header-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  padding-block: 0.875rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: opacity var(--transition);
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.9;
+    color: var(--color-text);
+  }
+}
+
+.logo-accent {
+  color: var(--color-primary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  a {
+    padding: 0.5rem 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    border-radius: var(--radius);
+    transition:
+      color var(--transition),
+      background var(--transition);
+
+    &:hover {
+      color: var(--nav-color);
+      background: var(--color-primary-muted);
+    }
+
+    &.active {
+      color: var(--nav-color);
+      background: var(--color-primary-muted);
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lang-btn {
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color var(--transition),
+    background var(--transition);
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &.active {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.25rem;
+  padding: 0;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+
+  svg {
+    color: inherit;
+  }
+
+  &:hover {
+    border-color: var(--color-primary-muted);
+    color: var(--color-primary);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+
+  span {
+    display: block;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    min-height: 2.75rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav {
+    position: fixed;
+    top: 2.75rem;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1rem;
+    background: var(--color-header-bg);
+    border-bottom: 1px solid var(--color-header-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease,
+      visibility 0.25s;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    a {
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+    }
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .lang-switcher {
+    margin-left: 0;
+  }
+
+  .lang-btn {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+}
