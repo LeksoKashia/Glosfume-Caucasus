@@ -46,7 +46,10 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--color-text);
-  max-width: 560px;
+  max-width: 600px;
+  /* Prevent breaking between “Caucasus” and “-ში” in Georgian */
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .hero-subtitle {
