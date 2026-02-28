@@ -1,4 +1,10 @@
-import { inject, Injectable, PLATFORM_ID, signal, computed } from '@angular/core';
+import {
+  inject,
+  Injectable,
+  PLATFORM_ID,
+  signal,
+  computed,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 export type Theme = 'light' | 'dark';
@@ -32,10 +38,6 @@ export class ThemeService {
       if (stored === 'light' || stored === 'dark') return stored;
     } catch {
       // ignore
-    }
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return prefersDark ? 'dark' : 'light';
     }
     return 'light';
   }

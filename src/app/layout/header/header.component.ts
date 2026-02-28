@@ -70,10 +70,7 @@ export class HeaderComponent {
       if (stored && ['en', 'ka', 'ru'].includes(stored)) {
         translate.use(stored);
       } else {
-        const browser = translate.getBrowserLang();
-        const use =
-          browser && ['en', 'ka', 'ru'].includes(browser) ? browser : 'ka';
-        translate.use(use);
+        translate.use('ka');
       }
     } else {
       translate.use('ka');
