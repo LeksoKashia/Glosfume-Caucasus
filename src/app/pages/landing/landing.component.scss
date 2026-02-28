@@ -395,6 +395,23 @@
   display: block;
 }
 
+.review-quote-toggle {
+  display: none; /* visible only on mobile */
+  margin-top: 0.5rem;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-style: normal;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .review-quote-mark {
   font-family: Georgia, serif;
   font-size: 2rem;
@@ -496,15 +513,36 @@
 
   .review-card {
     padding: 1.75rem 1.5rem;
-    min-height: 240px;
+    min-height: 200px;
   }
 
   .review-quote {
     font-size: 1rem;
-    min-height: 5.5rem;
+    min-height: 0;
+    align-items: center;
+  }
+
+  .review-quote-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+    max-height: 7.5em; /* ~5 lines fallback */
+  }
+
+  .review-quote-expanded .review-quote-text {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .review-quote-toggle {
+    display: inline-block;
   }
 
   .review-quote-mark {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }

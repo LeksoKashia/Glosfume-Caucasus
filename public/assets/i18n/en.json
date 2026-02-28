@@ -27,6 +27,8 @@
     "reviews": {
       "title": "What Our Clients Say",
       "subtitle": "Trusted by businesses across the region.",
+      "readMore": "Read more",
+      "showLess": "Show less",
       "review1": {
         "quote": "We had a tight deadline for our filtration upgrade. Glosfume not only delivered on time but the emissions readings were better than we expected. Real professionals.",
         "name": "David K.",
@@ -59,14 +61,26 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Detailed overview of what we offer.",
-    "consulting": {
-      "title": "Consulting",
-      "description": "Strategic consulting to help your business grow and navigate complex challenges."
+    "subtitle": "Filtration, installation and engineering solutions across the Caucasus.",
+    "filtration": {
+      "title": "Ceramic Filtration Systems",
+      "description": "Compact modular filters for tight spaces. High capture of PM10, PM2.5 and sub-micron particles."
     },
-    "solutions": {
-      "title": "Custom Solutions",
-      "description": "Tailored solutions designed to meet your unique requirements and goals."
+    "designConsultation": {
+      "title": "Design & Consultation",
+      "description": "In-house design engineers and draughtspersons deliver mechanical and electrical design and bespoke filtration solutions for long-term partnerships."
+    },
+    "installationCommissioning": {
+      "title": "Installation & Commissioning",
+      "description": "Single or multiple units, relocations, refurbishment and re-commissioning. We plan, disassemble, relocate, reassemble and commission your equipment with maximum efficiency."
+    },
+    "waterPipes": {
+      "title": "Water Pipes & Plumbing",
+      "description": "Installation of water pipes and plumbing systems for industrial and commercial projects."
+    },
+    "pools": {
+      "title": "Pool Systems",
+      "description": "Pool filtration, water treatment and pool equipment supply and installation."
     },
     "support": {
       "title": "Support & Maintenance",

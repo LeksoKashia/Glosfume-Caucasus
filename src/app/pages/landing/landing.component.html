@@ -24,7 +24,9 @@
         <div class="feature-icon-wrap">
           <img src="/assets/temperature.png" alt="" class="feature-icon" />
         </div>
-        <p class="feature-text">{{ "home.features.fireResistance" | translate }}</p>
+        <p class="feature-text">
+          {{ "home.features.fireResistance" | translate }}
+        </p>
       </div>
       <div class="feature-item">
         <div class="feature-icon-wrap">
@@ -51,62 +53,104 @@
       {{ "home.servicesSubtitle" | translate }}
     </p>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+      @for (key of serviceKeys; track key) {
+        <div class="service-card">
+          <div class="service-icon">
+            @switch (key) {
+              @case ("filtration") {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"
+                  />
+                </svg>
+              }
+              @case ("designConsultation") {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              }
+              @case ("installationCommissioning") {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              }
+              @case ("waterPipes") {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 6h4v12H3V6zm8 0h4v12h-4V6zm8 0h4v12h-4V6z" />
+                </svg>
+              }
+              @case ("pools") {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <ellipse cx="12" cy="12" rx="10" ry="4" />
+                  <path d="M2 12h20M4 9h16M6 15h12" />
+                </svg>
+              }
+              @default {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              }
+            }
+          </div>
+          <h3>{{ "services." + key + ".title" | translate }}</h3>
+          <p>{{ "services." + key + ".description" | translate }}</p>
         </div>
-        <h3>{{ "services.consulting.title" | translate }}</h3>
-        <p>{{ "services.consulting.description" | translate }}</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"
-            />
-            <path d="M12 6v6l4 2" />
-          </svg>
-        </div>
-        <h3>{{ "services.solutions.title" | translate }}</h3>
-        <p>{{ "services.solutions.description" | translate }}</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-            />
-          </svg>
-        </div>
-        <h3>{{ "services.support.title" | translate }}</h3>
-        <p>{{ "services.support.description" | translate }}</p>
-      </div>
+      }
     </div>
     <div class="text-center" style="margin-top: 2rem">
       <a routerLink="/services" class="btn btn-primary">{{
@@ -150,36 +194,103 @@
       {{ "home.reviews.subtitle" | translate }}
     </p>
     <div class="reviews-carousel">
-      <button type="button" class="carousel-btn carousel-prev" (click)="prev()" aria-label="Previous review">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      <button
+        type="button"
+        class="carousel-btn carousel-prev"
+        (click)="prev()"
+        aria-label="Previous review"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
       </button>
       <div class="carousel-track">
         <div class="review-card" [attr.data-index]="currentReviewIndex">
           <div class="review-avatar">
             @if (getReviewAvatar(currentReviewKey); as avatar) {
-              <img [src]="avatar" [alt]="'home.reviews.' + currentReviewKey + '.name' | translate" />
+              <img
+                [src]="avatar"
+                [alt]="'home.reviews.' + currentReviewKey + '.name' | translate"
+              />
             } @else {
-              <span class="review-avatar-initials">{{ 'home.reviews.' + currentReviewKey + '.initial' | translate }}</span>
+              <span class="review-avatar-initials">{{
+                "home.reviews." + currentReviewKey + ".initial" | translate
+              }}</span>
             }
           </div>
-          <blockquote class="review-quote">
-            <span class="review-quote-mark review-quote-open" aria-hidden="true">"</span>
-            <span class="review-quote-text">{{ 'home.reviews.' + currentReviewKey + '.quote' | translate }}</span>
-            <span class="review-quote-mark review-quote-close" aria-hidden="true">"</span>
+          <blockquote
+            class="review-quote"
+            [class.review-quote-expanded]="reviewQuoteExpanded"
+          >
+            <span class="review-quote-mark review-quote-open" aria-hidden="true"
+              >"</span
+            >
+            <span class="review-quote-text">{{
+              "home.reviews." + currentReviewKey + ".quote" | translate
+            }}</span>
+            <span
+              class="review-quote-mark review-quote-close"
+              aria-hidden="true"
+              >"</span
+            >
+            <button
+              type="button"
+              class="review-quote-toggle"
+              (click)="toggleReviewQuote()"
+            >
+              {{
+                reviewQuoteExpanded
+                  ? ("home.reviews.showLess" | translate)
+                  : ("home.reviews.readMore" | translate)
+              }}
+            </button>
           </blockquote>
           <footer class="review-author">
-            <strong class="review-name">{{ 'home.reviews.' + currentReviewKey + '.name' | translate }}</strong>
-            <span class="review-role">{{ 'home.reviews.' + currentReviewKey + '.role' | translate }}</span>
+            <strong class="review-name">{{
+              "home.reviews." + currentReviewKey + ".name" | translate
+            }}</strong>
+            <span class="review-role">{{
+              "home.reviews." + currentReviewKey + ".role" | translate
+            }}</span>
           </footer>
         </div>
       </div>
-      <button type="button" class="carousel-btn carousel-next" (click)="next()" aria-label="Next review">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <button
+        type="button"
+        class="carousel-btn carousel-next"
+        (click)="next()"
+        aria-label="Next review"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
       </button>
     </div>
     <div class="carousel-dots">
       @for (i of [0, 1, 2, 3]; track i) {
-        <button type="button" class="dot" [class.active]="currentReviewIndex === i" (click)="goTo(i)" [attr.aria-label]="'Review ' + (i + 1)"></button>
+        <button
+          type="button"
+          class="dot"
+          [class.active]="currentReviewIndex === i"
+          (click)="goTo(i)"
+          [attr.aria-label]="'Review ' + (i + 1)"
+        ></button>
       }
     </div>
   </div>

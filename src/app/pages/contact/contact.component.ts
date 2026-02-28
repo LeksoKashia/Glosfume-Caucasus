@@ -12,7 +12,7 @@ export class ContactComponent {
   submitted = false;
 
   /** WhatsApp link: use format https://wa.me/995XXXXXXXXX (country code + number, no + or spaces) */
-  readonly whatsappUrl = 'https://wa.me/995595036908';
+  readonly whatsappUrl = 'https://wa.me/995555353312';
 
   onSubmit(): void {
     this.submitted = true;

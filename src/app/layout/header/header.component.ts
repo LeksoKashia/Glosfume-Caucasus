@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, PLATFORM_ID, afterNextRender, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, afterNextRender, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -12,17 +12,47 @@ import { ThemeService } from '../../core/services/theme.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  @ViewChild('langDropdown') dropdownRef?: ElementRef<HTMLElement>;
+
   private readonly platformId = inject(PLATFORM_ID);
   private readonly cdr = inject(ChangeDetectorRef);
   /** True after first paint in the browser; avoids SSR/hydration showing both theme icons. */
   showThemeIcon = false;
 
   isMenuOpen = false;
+  langDropdownOpen = false;
   readonly languages = [
     { code: 'en', label: 'EN' },
     { code: 'ka', label: 'ქართ' },
     { code: 'ru', label: 'RU' },
   ] as const;
+
+  currentLangLabel(): string {
+    const cur = this.translate.currentLang;
+    const found = this.languages.find((l) => l.code === cur);
+    return found ? found.label : 'EN';
+  }
+
+  toggleLangDropdown(): void {
+    this.langDropdownOpen = !this.langDropdownOpen;
+  }
+
+  selectLang(code: string): void {
+    this.setLang(code);
+    this.langDropdownOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(e: MouseEvent): void {
+    if (
+      this.langDropdownOpen &&
+      this.dropdownRef?.nativeElement &&
+      !this.dropdownRef.nativeElement.contains(e.target as Node)
+    ) {
+      this.langDropdownOpen = false;
+      this.cdr.markForCheck();
+    }
+  }
 
   constructor(
     public theme: ThemeService,
@@ -42,11 +72,11 @@ export class HeaderComponent {
       } else {
         const browser = translate.getBrowserLang();
         const use =
-          browser && ['en', 'ka', 'ru'].includes(browser) ? browser : 'en';
+          browser && ['en', 'ka', 'ru'].includes(browser) ? browser : 'ka';
         translate.use(use);
       }
     } else {
-      translate.use('en');
+      translate.use('ka');
     }
   }
 

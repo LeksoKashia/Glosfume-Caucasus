@@ -31,16 +31,44 @@
     </nav>
 
     <div class="header-actions">
-      <div class="lang-switcher">
-        @for (lang of languages; track lang.code) {
-          <button
-            type="button"
-            class="lang-btn"
-            [class.active]="translate.currentLang === lang.code"
-            (click)="setLang(lang.code)"
+      <div class="lang-dropdown" #langDropdown>
+        <button
+          type="button"
+          class="lang-dropdown-trigger"
+          (click)="toggleLangDropdown()"
+          [attr.aria-expanded]="langDropdownOpen"
+          aria-haspopup="listbox"
+          [attr.aria-label]="'Language'"
+        >
+          <span class="lang-dropdown-label">{{ currentLangLabel() }}</span>
+          <svg
+            class="lang-dropdown-chevron"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            [class.open]="langDropdownOpen"
           >
-            {{ lang.label }}
-          </button>
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        @if (langDropdownOpen) {
+          <div class="lang-dropdown-panel" role="listbox">
+            @for (lang of languages; track lang.code) {
+              <button
+                type="button"
+                class="lang-dropdown-option"
+                role="option"
+                [attr.aria-selected]="translate.currentLang === lang.code"
+                (click)="selectLang(lang.code)"
+              >
+                {{ lang.label }}
+              </button>
+            }
+          </div>
         }
       </div>
       <button
@@ -90,11 +118,44 @@
         type="button"
         class="menu-toggle"
         (click)="toggleMenu()"
-        aria-label="Toggle menu"
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'"
+        [attr.aria-expanded]="isMenuOpen"
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        @if (isMenuOpen) {
+          <svg
+            class="menu-icon menu-icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        } @else {
+          <svg
+            class="menu-icon menu-icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        }
       </button>
     </div>
   </div>

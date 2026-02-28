@@ -1,5 +1,9 @@
 .page-hero {
-  background: linear-gradient(180deg, var(--color-primary-muted) 0%, var(--color-bg) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-muted) 0%,
+    var(--color-bg) 100%
+  );
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -14,6 +18,15 @@
   font-size: 1.125rem;
   color: var(--color-text-muted);
   margin: 0;
+}
+
+.whatsapp-link-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 0 auto 2rem;
 }
 
 .contact-grid {
@@ -131,16 +144,19 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.25rem;
-  background: rgba(37, 211, 102, 0.12);
-  border: 1px solid rgba(37, 211, 102, 0.35);
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.4);
   border-radius: var(--radius-lg);
-  color: inherit;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  color: var(--color-text);
 
   &:hover {
-    background: rgba(37, 211, 102, 0.18);
+    background: rgba(37, 211, 102, 0.22);
     border-color: #25d366;
+    color: var(--color-text);
   }
 
   .whatsapp-icon {
@@ -150,6 +166,8 @@
 
   strong {
     margin-bottom: 0;
+    color: inherit;
+    font-weight: 600;
   }
 }
 
