@@ -12,10 +12,10 @@ export class ServicesComponent {
   /** All service keys used in i18n (services.<key>.title / .description) */
   readonly serviceKeys = [
     'filtration',
-    'designConsultation',
-    'installationCommissioning',
     'waterPipes',
     'pools',
+    'designConsultation',
+    'installationCommissioning',
     'support',
   ] as const;
 }

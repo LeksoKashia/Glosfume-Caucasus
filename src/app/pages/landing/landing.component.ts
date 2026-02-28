@@ -18,11 +18,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class LandingComponent implements OnInit, OnDestroy {
   /** Only 3 services shown on landing; full list is on the services page. */
-  readonly serviceKeys = [
-    'filtration',
-    'designConsultation',
-    'installationCommissioning',
-  ] as const;
+  readonly serviceKeys = ['filtration', 'waterPipes', 'pools'] as const;
 
   currentReviewIndex = 0;
   readonly totalReviews = 4;
