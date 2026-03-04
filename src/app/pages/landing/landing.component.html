@@ -142,112 +142,26 @@
   </div>
 </section>
 
-<section class="page-section reviews-section">
+<section class="page-section partners-section">
   <div class="container">
     <h2 class="section-title text-center">
-      {{ "home.reviews.title" | translate }}
+      {{ "home.partners.title" | translate }}
     </h2>
     <p class="section-subtitle text-center">
-      {{ "home.reviews.subtitle" | translate }}
+      {{ "home.partners.subtitle" | translate }}
     </p>
-    <div class="reviews-carousel">
-      <button
-        type="button"
-        class="carousel-btn carousel-prev"
-        (click)="prev()"
-        aria-label="Previous review"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
-      <div class="carousel-track">
-        <div class="review-card" [attr.data-index]="currentReviewIndex">
-          <div class="review-avatar">
-            @if (getReviewAvatar(currentReviewKey); as avatar) {
-              <img
-                [src]="avatar"
-                [alt]="'home.reviews.' + currentReviewKey + '.name' | translate"
-              />
-            } @else {
-              <span class="review-avatar-initials">{{
-                "home.reviews." + currentReviewKey + ".initial" | translate
-              }}</span>
-            }
-          </div>
-          <blockquote
-            class="review-quote"
-            [class.review-quote-expanded]="reviewQuoteExpanded"
-          >
-            <span class="review-quote-mark review-quote-open" aria-hidden="true"
-              >"</span
-            >
-            <span class="review-quote-text">{{
-              "home.reviews." + currentReviewKey + ".quote" | translate
-            }}</span>
-            <span
-              class="review-quote-mark review-quote-close"
-              aria-hidden="true"
-              >"</span
-            >
-            <button
-              type="button"
-              class="review-quote-toggle"
-              (click)="toggleReviewQuote()"
-            >
-              {{
-                reviewQuoteExpanded
-                  ? ("home.reviews.showLess" | translate)
-                  : ("home.reviews.readMore" | translate)
-              }}
-            </button>
-          </blockquote>
-          <footer class="review-author">
-            <strong class="review-name">{{
-              "home.reviews." + currentReviewKey + ".name" | translate
-            }}</strong>
-            <span class="review-role">{{
-              "home.reviews." + currentReviewKey + ".role" | translate
-            }}</span>
-          </footer>
+    <div class="partners-grid">
+      @for (partner of partners; track partner.id) {
+        <div class="partner-card">
+          <img
+            [src]="partner.logo"
+            [alt]="'home.partners.' + partner.id | translate"
+            class="partner-logo"
+          />
+          <span class="partner-name">{{
+            "home.partners." + partner.id | translate
+          }}</span>
         </div>
-      </div>
-      <button
-        type="button"
-        class="carousel-btn carousel-next"
-        (click)="next()"
-        aria-label="Next review"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
-    </div>
-    <div class="carousel-dots">
-      @for (i of [0, 1, 2, 3]; track i) {
-        <button
-          type="button"
-          class="dot"
-          [class.active]="currentReviewIndex === i"
-          (click)="goTo(i)"
-          [attr.aria-label]="'Review ' + (i + 1)"
-        ></button>
       }
     </div>
   </div>

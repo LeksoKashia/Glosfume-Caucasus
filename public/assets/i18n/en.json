@@ -3,7 +3,8 @@
     "home": "Home",
     "services": "Services",
     "about": "About Us",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "technologies": "Technologies"
   },
   "home": {
     "heroTitle": "Welcome to Glosfume Caucasus",
@@ -24,39 +25,12 @@
     "trust": "Trusted by clients across the region",
     "quality": "Quality-driven results",
     "support": "Dedicated support every step of the way",
-    "reviews": {
-      "title": "What Our Clients Say",
-      "subtitle": "Trusted by businesses across the region.",
-      "readMore": "Read more",
-      "showLess": "Show less",
-      "review1": {
-        "quote": "We had a tight deadline for our filtration upgrade. Glosfume not only delivered on time but the emissions readings were better than we expected. Real professionals.",
-        "name": "David K.",
-        "role": "Operations Director",
-        "initial": "D",
-        "avatar": ""
-      },
-      "review2": {
-        "quote": "After comparing several suppliers in the region, we chose Glosfume. The equipment is running smoothly and their support team responds within hours when we need them.",
-        "name": "Maria T.",
-        "role": "CEO, Industrial Solutions",
-        "initial": "M",
-        "avatar": ""
-      },
-      "review3": {
-        "quote": "Clear documentation, fair pricing, and they actually listen to what you need. We’ve done three projects together and I’d work with them again without hesitation.",
-        "name": "Giorgi M.",
-        "role": "Project Manager",
-        "initial": "G",
-        "avatar": ""
-      },
-      "review4": {
-        "quote": "The compact design fit our existing layout, and installation was straightforward. Performance has been stable for over a year now. Very satisfied.",
-        "name": "Elena S.",
-        "role": "Procurement Lead",
-        "initial": "E",
-        "avatar": ""
-      }
+    "partners": {
+      "title": "Our Partners",
+      "subtitle": "Trusted by industry leaders across the region.",
+      "partner1": "Partner One",
+      "partner2": "Partner Two",
+      "partner3": "Partner Three"
     }
   },
   "services": {
@@ -103,11 +77,60 @@
     "name": "Your Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send Message",
+    "send": "SEND",
     "success": "Thank you! Your message has been sent.",
     "address": "Address",
     "phone": "Phone",
-    "whatsapp": "Chat on WhatsApp"
+    "whatsapp": "Chat on WhatsApp",
+    "placeholderName": "NAME*",
+    "placeholderFirstName": "FIRST NAME",
+    "placeholderEmail": "Email address*",
+    "placeholderPhone": "Phone*",
+    "placeholderMessage": "Message",
+    "captchaLabel": "4 + 5 =",
+    "captchaError": "Please solve the verification."
+  },
+  "technologies": {
+    "operatingTitle": "Operating principle of the Glosfume filter",
+    "operatingIntro": "Glosfume filtration technology effectively purifies industrial hot gases. It eliminates fine particles using a nanometric filter. A filter cleaning system ensures regular maintenance of the filter. This process guarantees emissions that comply with standards and also optimizes filter performance and lifespan.",
+    "step1Title": "Circulation of the flow of hot and contaminated gases",
+    "step1Text": "The hot fumes are drawn in by vacuum into the so-called \"contaminated\" compartment.",
+    "step2Title": "Filtration through the nanometric mesh of the ceramic sleeves",
+    "step2Text": "The solid particles (dust) and neutralized adjuvants are collected on the external surface of the filter medium, thus forming a \"particle cake\".",
+    "step3Title": "Compressed air bag cleaning system",
+    "step3Text": "The injection of compressed air in a counter-current manner allows the \"particle cake\" to be cleaned in order to be evacuated, by gravity, towards the ash pan.",
+    "step4Title": "Sealing of the \"clean\" compartment",
+    "step4Text": "The sleeve support plate ensures the separation of contaminated gases and clean gases.",
+    "step5Title": "Clean gas flow outlet",
+    "step5Text": "The cleaned fumes exit with a guaranteed dust level of less than 5 mg/Nm³ at 6% O₂.",
+    "step6Title": "Electrical tracing and insulation (optional)",
+    "step6Text": "The chassis can be supplied, as an option, with thermal insulation and electrical tracing to prevent condensation on the walls when using acidic or special fuels.",
+    "diagramAlt": "Diagram of the Glosfume filter operating principle",
+    "filteringMediaTitle": "The filtering media",
+    "filteringMediaIntro": "GLOSFUME filter media, known as sleeves, are manufactured in Great Britain. They meet the highest standards of performance and design. A permanent stock of over 7,000 sleeves ensures complete availability for all installations. Our expertise also allows us to meet specific industrial needs. We therefore offer customized solutions for hot gas filtration.",
+    "microporousTitle": "Microporous ceramic sleeves",
+    "microporousIntro1": "GLOSFUME hot gas filter elements capture more than 99.99% of particles thanks to their high-temperature ceramic design.",
+    "microporousIntro2": "Thanks to a compact mesh of microporous materials, they guarantee a very high filtration capacity in various sectors, such as metallurgy, mining, renewable energy production, waste treatment or by-product recovery.",
+    "microporousF1": "Temperature resistance up to 1000°C",
+    "microporousF2": "Fire and spark resistance",
+    "microporousF3": "Corrosion resistance due to the acidity of hot gases",
+    "microporousF4": "Nanometric mesh",
+    "microD1Title": "Density and resistance",
+    "microD1Text": "Ceramic elements are more resistant than all other low-density filter elements such as textiles.",
+    "microD2Title": "Consistent performance",
+    "microD2Text": "The precise machining of the wall thickness ensures a continuity of density for consistent filtration.",
+    "microD3Title": "Microporous finish",
+    "microD3Text": "The microporous finish captures particles as small as a nanogram, to filter out toxic and harmful PM10 and PM2.5 materials.",
+    "microD4Title": "Customizable",
+    "microD4Text": "The modularity of the filter allows it to meet the requirements of each project in terms of sizing and power.",
+    "microD5Title": "Reliability",
+    "microD5Text": "The sleeves can withstand high temperatures up to 1000°C and have a reinforced collar.",
+    "microD6Title": "Adapted to future developments",
+    "microD6Text": "The guaranteed filtration performance of < 5 mg/Nm³ at 6% O₂, well below current regulations (30 to 50 mg/Nm³ at 6% O₂), offers the possibility of meeting future air quality requirements.",
+    "catalyticTitle": "Catalytic sleeves",
+    "catalyticIntro1": "GLOSFUME catalytic sleeves are made of ceramic fibers impregnated with a custom catalytic solution, tailored to the specific needs of customers.",
+    "catalyticIntro2": "The catalyst, applied uniformly in the ceramic structure, effectively captures a wide range of pollutants (dust, NOx, NH₃, dioxins, VOCs) in a single process.",
+    "catalyticIntro3": "These filters can operate at temperatures ranging from 180°C to 650°C. This process provides a pollution control solution for industrial processes with an investment cost up to 40% lower than some alternative external solutions."
   },
   "footer": {
     "rights": "All rights reserved."

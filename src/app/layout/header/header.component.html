@@ -1,8 +1,7 @@
 <header class="header">
   <div class="container header-inner">
     <a routerLink="/" class="logo" (click)="closeMenu()">
-      <span class="logo-text">Glosfume</span>
-      <span class="logo-accent">Caucasus</span>
+      <img src="/assets/glosfume-logo.png" alt="Glosfume Caucasus" class="logo-img" />
     </a>
 
     <nav class="nav" [class.open]="isMenuOpen">
@@ -12,6 +11,12 @@
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="closeMenu()"
         >{{ "nav.home" | translate }}</a
+      >
+      <a
+        routerLink="/technologies"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+        >{{ "nav.technologies" | translate }}</a
       >
       <a
         routerLink="/services"
