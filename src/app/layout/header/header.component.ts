@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, afterNextRender, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +15,6 @@ export class HeaderComponent {
 
   private readonly platformId = inject(PLATFORM_ID);
   private readonly cdr = inject(ChangeDetectorRef);
-  /** True after first paint in the browser; avoids SSR/hydration showing both theme icons. */
-  showThemeIcon = false;
 
   isMenuOpen = false;
   langDropdownOpen = false;
@@ -54,26 +51,18 @@ export class HeaderComponent {
     }
   }
 
-  constructor(
-    public theme: ThemeService,
-    public translate: TranslateService,
-  ) {
-    if (isPlatformBrowser(this.platformId)) {
-      afterNextRender(() => {
-        this.showThemeIcon = true;
-        this.cdr.markForCheck();
-      });
-    }
+  constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'ka', 'ru']);
+    translate.setDefaultLang('en');
     if (typeof localStorage !== 'undefined') {
       const stored = localStorage.getItem('glosfume-lang');
       if (stored && ['en', 'ka', 'ru'].includes(stored)) {
         translate.use(stored);
       } else {
-        translate.use('ka');
+        translate.use('en');
       }
     } else {
-      translate.use('ka');
+      translate.use('en');
     }
   }
 

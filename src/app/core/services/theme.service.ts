@@ -29,16 +29,9 @@ export class ThemeService {
   }
 
   private loadInitialTheme(): Theme {
+    // Light mode only for now; dark mode styles kept for future use.
     if (!isPlatformBrowser(this.platformId)) return 'light';
     if (typeof document === 'undefined') return 'light';
-    const fromDoc = document.documentElement.getAttribute('data-theme');
-    if (fromDoc === 'light' || fromDoc === 'dark') return fromDoc;
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-      if (stored === 'light' || stored === 'dark') return stored;
-    } catch {
-      // ignore
-    }
     return 'light';
   }
 

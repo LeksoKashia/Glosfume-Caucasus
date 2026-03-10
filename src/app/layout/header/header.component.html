@@ -28,6 +28,12 @@
         "nav.about" | translate
       }}</a>
       <a
+        routerLink="/prices"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+        >{{ "nav.prices" | translate }}</a
+      >
+      <a
         routerLink="/contact"
         routerLinkActive="active"
         (click)="closeMenu()"
@@ -76,49 +82,6 @@
           </div>
         }
       </div>
-      <button
-        type="button"
-        class="theme-toggle"
-        (click)="theme.toggleTheme()"
-        [attr.aria-label]="
-          theme.isDark() ? 'Switch to light mode' : 'Switch to dark mode'
-        "
-      >
-        @if (showThemeIcon && theme.isDark()) {
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            title="Switch to light"
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-            />
-          </svg>
-        } @else {
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            title="Switch to dark"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        }
-      </button>
       <button
         type="button"
         class="menu-toggle"

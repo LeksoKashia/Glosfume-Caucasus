@@ -14,8 +14,6 @@ export class LandingComponent {
   readonly serviceKeys = ['filtration', 'waterPipes', 'pools'] as const;
 
   readonly partners = [
-    { id: 'partner1', logo: '/assets/partner1.svg' },
-    { id: 'partner2', logo: '/assets/partner2.svg' },
-    { id: 'partner3', logo: '/assets/partner3.svg' },
+    { id: 'partner1', logo: '/assets/ECOFLUX%20LOGO.png' },
   ];
 }

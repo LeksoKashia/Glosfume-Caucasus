@@ -4,7 +4,8 @@
     "services": "Services",
     "about": "About Us",
     "contact": "Contact Us",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "prices": "Prices"
   },
   "home": {
     "heroTitle": "Welcome to Glosfume Caucasus",
@@ -28,9 +29,7 @@
     "partners": {
       "title": "Our Partners",
       "subtitle": "Trusted by industry leaders across the region.",
-      "partner1": "Partner One",
-      "partner2": "Partner Two",
-      "partner3": "Partner Three"
+      "partner1": "Ecoflux"
     }
   },
   "services": {
@@ -131,6 +130,55 @@
     "catalyticIntro1": "GLOSFUME catalytic sleeves are made of ceramic fibers impregnated with a custom catalytic solution, tailored to the specific needs of customers.",
     "catalyticIntro2": "The catalyst, applied uniformly in the ceramic structure, effectively captures a wide range of pollutants (dust, NOx, NH₃, dioxins, VOCs) in a single process.",
     "catalyticIntro3": "These filters can operate at temperatures ranging from 180°C to 650°C. This process provides a pollution control solution for industrial processes with an investment cost up to 40% lower than some alternative external solutions."
+  },
+  "prices": {
+    "title": "Glosfume Filter Prices",
+    "intro": "Prices for Glosfume filter models and optional components. All prices in GBP (£).",
+    "asAt": "Prices as at",
+    "includingIncrease": "including price increase",
+    "updated": "Updated",
+    "mainTableTitle": "Prices as at 01/01/2025 including price increase",
+    "itemisedTitle": "Itemised Discounted Prices",
+    "optionsTitle": "Options",
+    "notesTitle": "Notes",
+    "compressors": "Compressors",
+    "dischargeCollection": "Discharge collection",
+    "insulatedDuctJackets": "Insulated Duct Jackets",
+    "ductJacketsQuote": "Quoted on a job by job basis based on ducting layout circa",
+    "colModel": "Filter Model",
+    "colMaxFlow": "Max Flow m³/hr",
+    "colScrews": "No. of Screws",
+    "colFilterPrice": "Filter Price",
+    "colScrewPrice": "Screw Price",
+    "colRotaryValve": "Rotary Valve Price",
+    "colTraceHeating": "Trace Heating",
+    "colDiverterValve": "Diverter Valve",
+    "colTotalSale": "Total Sale Price",
+    "colDiscount": "Discount",
+    "colSaelenPrice": "Saelen Price",
+    "colInsulatedLids": "Insulated Lid Jackets",
+    "colFanKw": "Fan motor kW",
+    "colAbsPwr": "Abs Pwr kW @ 200°C @ 50Hz",
+    "colBlastValves": "No. Blast valves",
+    "colDiverterDia": "Diverter Dia mm",
+    "colCompressedAir": "Compressed Air (m³/hr)",
+    "colTotalSaleLids": "Total Sale + Lids Price",
+    "colCablePipeTray": "Cable & Pipe Tray Price extra",
+    "colRhkNote8": "RHK-Note 8",
+    "colOutputKw": "Output kW",
+    "notes": {
+      "note1": "Prices as at 01/01/2025.",
+      "note2": "Compressed air consumption at 6bar and 1 pulse every 30 seconds.",
+      "note3": "IXON Remote included in the panel price.",
+      "note4": "Fans rated at 350mmWG @ 200°C at maximum gas flow.",
+      "note5": "Units fitted with automatic 2 way diverter valve.",
+      "note6": "Filters fitted with G3-1.25m element.",
+      "note7": "Overall height of filter will vary depending on the number of screws.",
+      "note8": "Filter sizes to 200m ABSL, resize if above.",
+      "note9": "Compressor prices subject to change, please check for rotary prices.",
+      "note10": "Element spacing higher, lower CAN velocity.",
+      "note11": "Increased from 400 diameter."
+    }
   },
   "footer": {
     "rights": "All rights reserved."

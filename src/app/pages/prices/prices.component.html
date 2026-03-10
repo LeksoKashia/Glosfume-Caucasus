@@ -1,0 +1,150 @@
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-title">{{ "prices.title" | translate }}</h1>
+    <span class="title-underline"></span>
+    <p class="page-intro">{{ "prices.intro" | translate }}</p>
+    <p class="price-meta">
+      {{ "prices.asAt" | translate }} {{ priceDate }} {{ "prices.includingIncrease" | translate }}
+      <span class="price-updated">({{ "prices.updated" | translate }} {{ priceUpdated }})</span>
+    </p>
+  </div>
+</section>
+
+<section class="page-section prices-section">
+  <div class="container">
+    <h2 class="section-title">{{ "prices.mainTableTitle" | translate }}</h2>
+    <div class="table-wrap">
+      <table class="price-table main-table">
+        <thead>
+          <tr>
+            <th>{{ "prices.colModel" | translate }}</th>
+            <th>{{ "prices.colMaxFlow" | translate }}</th>
+            <th>{{ "prices.colScrews" | translate }}</th>
+            <th>{{ "prices.colFilterPrice" | translate }}</th>
+            <th>{{ "prices.colScrewPrice" | translate }}</th>
+            <th>{{ "prices.colRotaryValve" | translate }}</th>
+            <th>{{ "prices.colTraceHeating" | translate }}</th>
+            <th>{{ "prices.colDiverterValve" | translate }}</th>
+            <th>{{ "prices.colTotalSale" | translate }}</th>
+            <th>{{ "prices.colDiscount" | translate }}</th>
+            <th>{{ "prices.colSaelenPrice" | translate }}</th>
+            <th>{{ "prices.colInsulatedLids" | translate }}</th>
+            <th>{{ "prices.colFanKw" | translate }}</th>
+            <th>{{ "prices.colAbsPwr" | translate }}</th>
+            <th>{{ "prices.colBlastValves" | translate }}</th>
+            <th>{{ "prices.colDiverterDia" | translate }}</th>
+            <th>{{ "prices.colCompressedAir" | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of mainTable; track row.model) {
+            <tr>
+              <td class="cell-model">{{ modelWithNote(row) }}</td>
+              <td>{{ row.maxFlow | number }}</td>
+              <td>{{ row.noScrews }}</td>
+              <td class="cell-currency">{{ formatPrice(row.filterPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.screwPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.rotaryValve) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.traceHeating) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.diverterValve) }}</td>
+              <td class="cell-currency cell-total">{{ formatPrice(row.totalSale) }}</td>
+              <td>{{ row.discount }}</td>
+              <td class="cell-currency cell-saelen">{{ formatPrice(row.saelenPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.insulatedLids) }}</td>
+              <td>{{ row.fanKw }}</td>
+              <td>{{ row.absPwrKw }}</td>
+              <td>{{ row.blastValves }}</td>
+              <td>{{ row.diverterDiaMm }}</td>
+              <td>{{ row.compressedAir }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title section-title-spaced">{{ "prices.itemisedTitle" | translate }}</h2>
+    <div class="table-wrap">
+      <table class="price-table itemised-table">
+        <thead>
+          <tr>
+            <th>{{ "prices.colModel" | translate }}</th>
+            <th>{{ "prices.colMaxFlow" | translate }}</th>
+            <th>{{ "prices.colScrews" | translate }}</th>
+            <th>{{ "prices.colFilterPrice" | translate }}</th>
+            <th>{{ "prices.colScrewPrice" | translate }}</th>
+            <th>{{ "prices.colRotaryValve" | translate }}</th>
+            <th>{{ "prices.colTraceHeating" | translate }}</th>
+            <th>{{ "prices.colDiverterValve" | translate }}</th>
+            <th>{{ "prices.colTotalSale" | translate }}</th>
+            <th>{{ "prices.colInsulatedLids" | translate }}</th>
+            <th>{{ "prices.colTotalSaleLids" | translate }}</th>
+            <th>{{ "prices.colCablePipeTray" | translate }}</th>
+            <th>{{ "prices.colRhkNote8" | translate }}</th>
+            <th>{{ "prices.colOutputKw" | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of itemisedTable; track row.model) {
+            <tr>
+              <td class="cell-model">{{ modelWithNote(row) }}</td>
+              <td>{{ row.maxFlow | number }}</td>
+              <td>{{ row.noScrews }}</td>
+              <td class="cell-currency">{{ formatPrice(row.filterPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.screwPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.rotaryValve) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.traceHeating) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.diverterValve) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.saelenPrice) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.insulatedLids) }}</td>
+              <td class="cell-currency cell-total">{{ formatPrice(row.totalSaleLids) }}</td>
+              <td class="cell-currency">{{ formatPrice(row.cablePipeTray) }}</td>
+              <td>{{ row.rhkNote8 }}</td>
+              <td>{{ row.outputKw }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="options-notes-grid">
+      <div class="options-block">
+        <h2 class="section-title">{{ "prices.optionsTitle" | translate }}</h2>
+        <div class="options-group">
+          <h3 class="options-subtitle">{{ "prices.compressors" | translate }}</h3>
+          <ul class="options-list">
+            @for (c of compressors; track c.name) {
+              <li>
+                <span class="option-name">{{ c.name }}</span>
+                <span class="option-detail"> — {{ c.usage }}</span>
+                <span class="option-price">{{ formatPrice(c.price) }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+        <div class="options-group">
+          <h3 class="options-subtitle">{{ "prices.dischargeCollection" | translate }}</h3>
+          <ul class="options-list">
+            @for (d of dischargeOptions; track d.name) {
+              <li>
+                <span class="option-name">{{ d.name }}</span>
+                <span class="option-price">{{ formatPrice(d.price) }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+        <div class="options-group">
+          <h3 class="options-subtitle">{{ "prices.insulatedDuctJackets" | translate }}</h3>
+          <p class="options-range">{{ "prices.ductJacketsQuote" | translate }} {{ ductJacketsRange }}</p>
+        </div>
+      </div>
+      <div class="notes-block">
+        <h2 class="section-title">{{ "prices.notesTitle" | translate }}</h2>
+        <ol class="notes-list">
+          @for (key of noteKeys; track key) {
+            <li>{{ "prices.notes." + key | translate }}</li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
