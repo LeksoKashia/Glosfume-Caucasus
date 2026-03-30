@@ -74,7 +74,7 @@
     "title": "Contact Us",
     "subtitle": "We would love to hear from you.",
     "name": "Your Name",
-    "email": "Email",
+    "email": "Email Address",
     "message": "Message",
     "send": "SEND",
     "success": "Thank you! Your message has been sent.",
