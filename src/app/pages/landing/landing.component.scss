@@ -10,16 +10,30 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-bg) 0%,
-    var(--color-primary-muted) 50%,
-    var(--color-bg) 100%
-  );
-  opacity: 0.4;
+  background-image: url("/assets/caucasus2.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  [data-theme="dark"] & {
-    opacity: 0.15;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    // background: linear-gradient(
+    //   135deg,
+    //   rgba(255, 255, 255, 0.78) 0%,
+    //   rgba(255, 255, 255, 0.55) 50%,
+    //   rgba(255, 255, 255, 0.78) 100%
+    // );
+  }
+
+  [data-theme="dark"] &::after {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.78) 0%,
+      rgba(15, 23, 42, 0.55) 50%,
+      rgba(15, 23, 42, 0.78) 100%
+    );
   }
 }
 
@@ -47,23 +61,60 @@
   margin-bottom: 1rem;
   color: var(--color-text);
   max-width: 600px;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
   /* Prevent breaking between “Caucasus” and “-ში” in Georgian */
   overflow-wrap: break-word;
   word-break: keep-all;
+
+  [data-theme="dark"] & {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  }
 }
 
 .hero-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: var(--color-text-muted);
+  color: var(--color-text);
+  font-weight: 500;
   max-width: 520px;
   margin: 0 0 2rem;
   line-height: 1.7;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85);
+
+  [data-theme="dark"] & {
+    color: #f1f5f9;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  }
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  .btn {
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+  }
+
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+  }
+
+  [data-theme="dark"] & .btn-outline {
+    background: rgba(15, 23, 42, 0.55);
+    color: #fff;
+    border-color: #fff;
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.75);
+    }
+  }
 }
 
 /* Features strip (red-aligned, next to welcome) */

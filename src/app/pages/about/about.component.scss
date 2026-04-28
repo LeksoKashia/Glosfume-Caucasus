@@ -38,6 +38,98 @@
   margin: 0 0 2.5rem;
 }
 
+.greeting {
+  margin-bottom: 2.5rem;
+
+  .content-body {
+    margin-bottom: 1.25rem;
+  }
+
+  .content-body:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.greeting-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+}
+
+.leadership-title {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.leadership {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 0 0 2rem;
+}
+
+.leader-card {
+  margin: 0;
+  text-align: center;
+}
+
+.leader-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border: 3px solid var(--color-bg);
+}
+
+.leader-photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-muted) 0%, var(--color-primary) 100%);
+  color: #fff;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.leader-caption {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.leader-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.leader-role {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+  .leadership {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
 .values-title {
   margin-top: 0.5rem;
 }

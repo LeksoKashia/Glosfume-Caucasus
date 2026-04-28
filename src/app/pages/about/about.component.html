@@ -1,19 +1,77 @@
 <section class="page-section page-hero">
   <div class="container">
-    <h1 class="page-title">{{ 'about.title' | translate }}</h1>
-    <p class="page-subtitle">{{ 'about.subtitle' | translate }}</p>
+    <h1 class="page-title">{{ "about.title" | translate }}</h1>
+    <p class="page-subtitle">{{ "about.subtitle" | translate }}</p>
   </div>
 </section>
 
 <section class="page-section about-content">
   <div class="container narrow">
-    <h2 class="content-title">{{ 'about.storyTitle' | translate }}</h2>
+    <div class="greeting">
+      <p class="greeting-title">{{ "about.greetingTitle" | translate }}</p>
+      <p class="content-body">{{ "about.greetingP1" | translate }}</p>
+      <p class="content-body">{{ "about.greetingP2" | translate }}</p>
+      <p class="content-body">{{ "about.greetingP3" | translate }}</p>
+    </div>
+
+    <h2 class="content-title">{{ "about.financeTitle" | translate }}</h2>
+    <p class="content-body">{{ "about.financeP1" | translate }}</p>
+    <p class="content-body">{{ "about.financeP2" | translate }}</p>
+    <p class="content-body">{{ "about.financeP3" | translate }}</p>
+
+    <h2 class="content-title">
+      {{ "about.technicalServiceTitle" | translate }}
+    </h2>
+    <p class="content-body">{{ "about.technicalServiceP1" | translate }}</p>
+    <p class="content-body">{{ "about.technicalServiceP2" | translate }}</p>
+    <p class="content-body">{{ "about.technicalServiceP3" | translate }}</p>
+    <p class="content-body">{{ "about.technicalServiceP4" | translate }}</p>
+
+    <!-- <h2 class="content-title">{{ 'about.storyTitle' | translate }}</h2>
     <p class="content-body">{{ 'about.story' | translate }}</p>
     <h2 class="content-title values-title">{{ 'about.valuesTitle' | translate }}</h2>
     <ul class="values-list">
       <li>{{ 'about.integrity' | translate }}</li>
       <li>{{ 'about.excellence' | translate }}</li>
       <li>{{ 'about.partnership' | translate }}</li>
-    </ul>
+    </ul> -->
+
+    <h2 class="content-title leadership-title">
+      {{ "about.leadershipTitle" | translate }}
+    </h2>
+    <div class="leadership">
+      <figure class="leader-card">
+        <img
+          src="/assets/ceo.jpeg"
+          alt="{{ 'about.ceoName' | translate }}"
+          class="leader-photo"
+        />
+        <figcaption class="leader-caption">
+          <span class="leader-name">{{ "about.ceoName" | translate }}</span>
+          <span class="leader-role">{{ "about.ceoTitle" | translate }}</span>
+        </figcaption>
+      </figure>
+      <figure class="leader-card">
+        <img
+          src="/assets/CTO.png"
+          alt="{{ 'about.ctoName' | translate }}"
+          class="leader-photo"
+        />
+        <figcaption class="leader-caption">
+          <span class="leader-name">{{ "about.ctoName" | translate }}</span>
+          <span class="leader-role">{{ "about.ctoTitle" | translate }}</span>
+        </figcaption>
+      </figure>
+      <figure class="leader-card">
+        <span
+          class="leader-photo leader-photo--placeholder"
+          aria-hidden="true"
+        ></span>
+        <figcaption class="leader-caption">
+          <span class="leader-name">{{ "about.cfoName" | translate }}</span>
+          <span class="leader-role">{{ "about.cfoTitle" | translate }}</span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
